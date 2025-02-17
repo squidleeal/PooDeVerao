@@ -1,8 +1,8 @@
 package reserva;
 
-import cliente.Cliente;
 import acompanhante.Acompanhante;
-import acompanhante.Servico;
+import acompanhante.servico.Servico;
+import cliente.Cliente;
 
 public class Reserva {
     private Cliente cliente;
