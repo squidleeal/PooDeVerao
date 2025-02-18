@@ -1,21 +1,35 @@
 package acompanhante.servico;
 
 public class Servico {
-    private String nome;
-    private String descricao;
-    private double precoBase;
+    private String tipo;
+    private double preco;
 
-    public Servico(String nome, String descricao, double precoBase) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.precoBase = precoBase;
+    public Servico(String tipo, double preco) {
+        this.tipo = tipo;
+        this.preco = preco;
     }
 
-    public String getNome() { return nome; }
-    public String getDescricao() { return descricao; }
-    public double getPrecoBase() { return precoBase; }
+    public String getTipo() {
+        return tipo;
+    }
 
-    public void listarServicosDisponiveis() {}
-    public double calcularPrecoTotal() { return 0.0; }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Servico{" +
+                "tipo='" + tipo + '\'' +
+                ", preco=" + preco +
+                '}';
+    }
 }
-

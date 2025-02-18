@@ -2,26 +2,45 @@ package acompanhante;
 
 public class Acompanhante {
     private String nome;
-    private int idade;
     private String genero;
-    private String tipo;
-    private double precoPorHora;
+    private String telefone;
 
-    public Acompanhante(String nome, int idade, String genero, String tipo, double precoPorHora) {
+    public Acompanhante(String nome, String genero, String telefone) {
         this.nome = nome;
-        this.idade = idade;
         this.genero = genero;
-        this.tipo = tipo;
-        this.precoPorHora = precoPorHora;
+        this.telefone = telefone;
     }
 
-    public String getNome() { return nome; }
-    public int getIdade() { return idade; }
-    public String getGenero() { return genero; }
-    public String getTipo() { return tipo; }
-    public double getPrecoPorHora() { return precoPorHora; }
+    public String getNome() {
+        return nome;
+    }
 
-    public boolean disponivel() { return false; }
-    public void atenderCliente() {}
-    public double calcularPrecoTotal(int horas) { return 0.0; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    @Override
+    public String toString() {
+        return "Acompanhante{" +
+                "nome='" + nome + '\'' +
+                ", genero='" + genero + '\'' +
+                ", telefone='" + telefone + '\'' +
+                '}';
+    }
 }
