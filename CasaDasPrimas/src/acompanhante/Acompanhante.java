@@ -1,27 +1,42 @@
 package acompanhante;
 
+import java.util.List;
+
 public class Acompanhante {
     private String nome;
-    private int idade;
     private String genero;
-    private String tipo;
-    private double precoPorHora;
+    private String telefone;
+    private String orientacao;
 
-    public Acompanhante(String nome, int idade, String genero, String tipo, double precoPorHora) {
+    public Acompanhante(String nome, String genero, String telefone, String orientacao) {
         this.nome = nome;
-        this.idade = idade;
         this.genero = genero;
-        this.tipo = tipo;
-        this.precoPorHora = precoPorHora;
+        this.telefone = telefone;
+        this.orientacao = orientacao;
     }
 
     public String getNome() { return nome; }
-    public int getIdade() { return idade; }
     public String getGenero() { return genero; }
-    public String getTipo() { return tipo; }
-    public double getPrecoPorHora() { return precoPorHora; }
+    public String getTelefone() { return telefone; } 
+    public String getOrientacao() { return orientacao; }
+    @Override
+    public String toString() {
+        return "Acompanhante: " +
+                " nome: " + nome + '\'' +
+                ", genero: " + genero + '\'' +
+                ", telefone: " + telefone + '\'' +
+                ", Orientação Sexual: " + orientacao + '\'';
+    }
+    public static void listarAcompanhantes() {
+        List<Acompanhante> acompanhantes = List.of(
+            new Acompanhante("Maria Silva", "Feminino", "(11) 98765-4321", "Heterossexual"),
+            new Acompanhante("João Pereira", "Masculino", "(21) 99874-1234", "Homossexual"),
+            new Acompanhante("Carla Mendes", "Feminino", "(31) 97654-6789", "Bissexual"),
+            new Acompanhante("Emanuel Badaro", "Masculino", "(41) 91234-5678", "Heterossexual"),
+            new Acompanhante("Ana Oliveira", "Feminino", "(51) 93456-7890", "Pansexual")
+        );
 
-    public boolean disponivel() { return false; }
-    public void atenderCliente() {}
-    public double calcularPrecoTotal(int horas) { return 0.0; }
+        acompanhantes.forEach(System.out::println);
+    }
+
 }
