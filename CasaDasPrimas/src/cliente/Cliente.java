@@ -32,10 +32,9 @@ public class Cliente {
 
     public void cadastrar() {
         Scanner scanner = new Scanner(System.in);
-        
         while (true) {
             System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+            nome = scanner.nextLine();
             if (nome.matches(".*\\d.*")) {  // Verifica se o nome contém números
                 System.out.println("Nome não pode conter números. Tente novamente.");
             } else {
@@ -43,7 +42,7 @@ public class Cliente {
             }
         }
 
-        int idade;
+        
         while (true) {
             System.out.print("Idade: ");
             idade = scanner.nextInt();
@@ -62,7 +61,7 @@ public class Cliente {
 
         while (true) {
             System.out.print("Email: ");
-            String email = scanner.nextLine();
+            email = scanner.nextLine();
             if (!email.endsWith("@gmail.com")) {
                 System.out.println("Email deve terminar com '@gmail.com'. Tente novamente.");
             } else {
@@ -73,7 +72,7 @@ public class Cliente {
 
         while (true) {
             System.out.print("Telefone: (exemplo: (ddd) 9xxxx-xxxx): ");
-            String telefone = scanner.nextLine();
+            telefone = scanner.nextLine();
             if (!telefone.matches("\\(\\d{2}\\) 9\\d{4}-\\d{4}")) {  // Verifica o formato (xx) xxxx-xxxx
                 System.out.println("Telefone inválido. O formato correto é (ddd) 9xxxx-xxxx. Tente novamente.");
             } else {
