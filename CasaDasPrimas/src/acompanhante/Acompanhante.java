@@ -49,6 +49,6 @@ public class Acompanhante {
                 return a;
             }
         }
-        return null; // Retorna null se não encontrar
+        return null;
     }
 }
