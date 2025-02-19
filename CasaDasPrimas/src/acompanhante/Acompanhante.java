@@ -2,7 +2,7 @@ package acompanhante;
 
 import java.util.List;
 
-public class Acompanhante {
+public class Acompanhante { //Encpsulamento
     private String nome;
     private String genero;
     private String telefone;
@@ -27,7 +27,7 @@ public class Acompanhante {
                 ", telefone: " + telefone + '\'' +
                 ", Orientação Sexual: " + orientacao + '\'';
     }
-    public static List<Acompanhante> getAcompanhantes() {
+    public static List<Acompanhante> getAcompanhantes() {/Abstração
         return List.of(
             new Acompanhante("Maria Silva", "Feminino", "(11) 98765-4321", "Heterossexual"),
             new Acompanhante("João Pereira", "Masculino", "(21) 99874-1234", "Homossexual"),
