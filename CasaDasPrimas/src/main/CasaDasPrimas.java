@@ -30,18 +30,18 @@ public class CasaDasPrimas {
             System.out.print("Opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
+            
 
             switch (opcao) {
                 case 1 -> {
                     if (!cadastrado) {
                         cliente = new Cliente("", 0, "", "");
-                        cliente.cadastrar();
+                        cliente.cadastrar(scanner);
                         cadastrado = true;
                     } else {
                         System.out.println("Opção inválida.");
                     }
                 }
-                
                 case 2 -> Servico.listarServicos();
                 
                 case 3 -> {
@@ -52,7 +52,6 @@ public class CasaDasPrimas {
                 case 4 -> {
                     if (cliente.getNome().isEmpty()) {
                         System.out.println("Deve-se cadastrar primeiro!");
-                        break;
                     }
 
                     System.out.println("Digite o nome exato da acompanhante desejada:");
@@ -61,7 +60,6 @@ public class CasaDasPrimas {
 
                     if (acompanhanteEscolhida == null) {
                         System.out.println("Acompanhante não encontrada!");
-                        break;
                     }
                     List<Servico> servicosEscolhidos = new ArrayList<>();
                     while (true) {
@@ -82,7 +80,6 @@ public class CasaDasPrimas {
                     }
                     if (servicosEscolhidos.isEmpty()) {
                         System.out.println("Reserva cancelada. Nenhum serviço foi selecionado.");
-                        break;
                     }
                     
                     Reserva reserva = new Reserva(cliente, acompanhanteEscolhida, servicosEscolhidos, 3);
@@ -91,7 +88,6 @@ public class CasaDasPrimas {
                     
                 case 5 -> {
                     System.out.println("Encerrando o sistema...");
-                    scanner.close();
                     return;
                 }
                 

@@ -30,8 +30,7 @@ public class Cliente {
     public String getTelefone() { return telefone; }
     
 
-    public void cadastrar() {
-        Scanner scanner = new Scanner(System.in);
+    public void cadastrar(Scanner scanner) {
         while (true) {
             System.out.print("Nome: ");
             nome = scanner.nextLine();
@@ -41,24 +40,21 @@ public class Cliente {
                 break;
             }
         }
-
         
         while (true) {
             System.out.print("Idade: ");
             idade = scanner.nextInt();
             scanner.nextLine(); // Consumir a quebra de linha
-        
+            
             if (idade < 18 ) {
                 System.out.println("Não permitimos menores de 18 anos. Tente novamente.");
-            } 
-            else if (idade > 100 ){
-                System.out.println("Idade inválida. Tente novamente.");    
-            } 
-            else {
-                break; // Sai do loop se a idade for válida
+            } else if (idade > 100 ){
+                System.out.println("Idade inválida. Tente novamente.");
+            } else {
+                break;
             }
         }
-
+        
         while (true) {
             System.out.print("Email: ");
             email = scanner.nextLine();
@@ -69,29 +65,22 @@ public class Cliente {
             }
         }
         
-
         while (true) {
             System.out.print("Telefone: (exemplo: (ddd) 9xxxx-xxxx): ");
             telefone = scanner.nextLine();
-            if (!telefone.matches("\\(\\d{2}\\) 9\\d{4}-\\d{4}")) {  // Verifica o formato (xx) xxxx-xxxx
+            if (!telefone.matches("\\(\\d{2}\\) 9\\d{4}-\\d{4}")) {
                 System.out.println("Telefone inválido. O formato correto é (ddd) 9xxxx-xxxx. Tente novamente.");
             } else {
                 break;
             }
         }
-
+        
         Cliente novoCliente = new Cliente(nome, idade, email, telefone);
         clientes.add(novoCliente);
-
-        System.out.println("Cliente cadastrado com sucesso!");
-        scanner.close();
         
+        System.out.println("Cliente cadastrado com sucesso!");
     }
-    public static void mostrarClientes() {
-        for (Cliente c : clientes) {
-            System.out.println("Nome: " + c.getNome() + ", Idade: " + c.getIdade() + ", Email: " + c.getEmail() + ", Telefone: " + c.getTelefone());
-        }
-    }
+    
 }
     
     
