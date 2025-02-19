@@ -2,7 +2,7 @@ package acompanhante.servico;
 
 import java.util.List;
 
-public class Servico {
+public class Servico { //Herança
     private String nome;
     private String descricao;
     private double preco;
@@ -13,7 +13,7 @@ public class Servico {
         this.preco = preco;
     }
 
-    public String getNome() { return nome; }
+    public String getNome() { return nome; } //Encapsulamento
     public String getDescricao() { return descricao; }
     public double getPreco() { return preco; }
    
@@ -24,7 +24,7 @@ public class Servico {
                 "\n Descrição: '" + descricao + '\'' +
                 "\n Preço: R$" + preco;
     }
-    public static List<Servico> getServicos() {
+    public static List<Servico> getServicos() { //Absatração
         return List.of(
             new Servico("Dança Sensual", 
                 "Uma dança picante para ser apenas assistida! Vestimenta e local a critérios da(o) Acompanhante, defina os demais detalhes como música e coreografia pelo whatsapp da(o) Acompanhante. Divirta-se!", 
