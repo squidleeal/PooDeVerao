@@ -24,8 +24,8 @@ public class Servico {
                 "\n Descrição: '" + descricao + '\'' +
                 "\n Preço: R$" + preco;
     }
-    public static void listarServicos() {
-        List<Servico> servicos = List.of(
+    public static List<Servico> getServicos() {
+        return List.of(
             new Servico("Dança Sensual", 
                 "Uma dança picante para ser apenas assistida! Vestimenta e local a critérios da(o) Acompanhante, defina os demais detalhes como música e coreografia pelo whatsapp da(o) Acompanhante. Divirta-se!", 
                 75.00),  
@@ -46,8 +46,23 @@ public class Servico {
                 "Prática onde o cliente ou a(o) Acompanhante urina sobre o outro, como parte de fetiche específico.", 
                 180.00)
         );
+    }
 
+    public static void listarServicos() {
+        List<Servico> servicos = getServicos();
         servicos.forEach(System.out::println);
     }
+
+    public static Servico buscarServico(String nome) {
+        List<Servico> servicos = getServicos();
+        for (Servico s : servicos) {
+            if (s.getNome().equalsIgnoreCase(nome)) {
+                return s;
+            }
+        }
+        return null;
+    }
+    
+    
 }
 

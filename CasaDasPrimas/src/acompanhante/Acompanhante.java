@@ -27,16 +27,28 @@ public class Acompanhante {
                 ", telefone: " + telefone + '\'' +
                 ", Orientação Sexual: " + orientacao + '\'';
     }
-    public static void listarAcompanhantes() {
-        List<Acompanhante> acompanhantes = List.of(
+    public static List<Acompanhante> getAcompanhantes() {
+        return List.of(
             new Acompanhante("Maria Silva", "Feminino", "(11) 98765-4321", "Heterossexual"),
             new Acompanhante("João Pereira", "Masculino", "(21) 99874-1234", "Homossexual"),
             new Acompanhante("Carla Mendes", "Feminino", "(31) 97654-6789", "Bissexual"),
             new Acompanhante("Emanuel Badaro", "Masculino", "(41) 91234-5678", "Heterossexual"),
             new Acompanhante("Ana Oliveira", "Feminino", "(51) 93456-7890", "Pansexual")
         );
-
+    }
+    public static void listarAcompanhantes(){
+        List<Acompanhante> acompanhantes = getAcompanhantes();
         acompanhantes.forEach(System.out::println);
     }
+    
 
+    public static Acompanhante buscarAcompanhante(String nome) {
+        List<Acompanhante> acompanhantes = getAcompanhantes();
+        for (Acompanhante a : acompanhantes) {
+            if (a.getNome().equalsIgnoreCase(nome)) {
+                return a;
+            }
+        }
+        return null;
+    }
 }
